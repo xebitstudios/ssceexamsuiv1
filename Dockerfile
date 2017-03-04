@@ -10,17 +10,17 @@ WORKDIR /src
 
 # Install app dependencies
 COPY package.json /src
-RUN npm install
+#RUN npm install
 
 # Bundle src source
 COPY . /src
 
 # To bind server port
-EXPOSE 80
+EXPOSE 8065
 
-CMD cd /src && node scripts/web-server.js
-#CMD [ "npm", "start" ]
-
+#CMD cd /src && node scripts/web-server.js
+CMD cd /src
+CMD [ "npm", "serve" ]
 
 # You can then build and run the Docker image:
 # $ docker build -t my-nodejs-app .
