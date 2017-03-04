@@ -17,28 +17,28 @@ module.exports = function(app, port, rootPath, apiRoutes) {
 	var salt = bcrypt.genSaltSync(12); // generate a salt, higher values make it longer to encrypt and decrypt
 	// var hash = bcrypt.hashSync('my password', salt); // hash the password with the salt
 
-	mongoose.connect(config.database); // connect to DB
+	// mongoose.connect(config.database); // connect to DB
 
-	var db = mongoose.connection;
+	// var db = mongoose.connection;
 	 
-	db.on('error', function (err) {
-		console.log('connection error', err);
-	});
+	// db.on('error', function (err) {
+	// 	console.log('connection error', err);
+	// });
 
-	db.once('open', function () {
-		console.log('SSCEexams DB is now connected.');
-	});
+	// db.once('open', function () {
+	// 	console.log('SSCEexams DB is now connected.');
+	// });
 
 	app.set('superSecret', config.secret); // secret variable
 
-	// var allowCors = function(req, res, next) {
-	// 	res.header('Access-Control-Allow-Origin', '*');
-	// 	res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
-	// 	res.header('Access-Control-Allow-Headers', 'Content-Type');
-	// 	res.header('Access-Control-Allow-Credentials', 'true');
-	// 	next();
-	// };	
-	// app.use(allowCors);
+	var allowCors = function(req, res, next) {
+		res.header('Access-Control-Allow-Origin', '*');
+		res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
+		res.header('Access-Control-Allow-Headers', 'Content-Type');
+		res.header('Access-Control-Allow-Credentials', 'true');
+		next();
+	};	
+	app.use(allowCors);
 
 	app.get('/api/ingestlogs', function(req, res) {
 		console.log('Ingested log data is: ');
@@ -53,19 +53,19 @@ module.exports = function(app, port, rootPath, apiRoutes) {
 
 	apiRoutes.get('/setup', function(req, res) {
 		function seedDBFunction(collection){ 
-			_.each(collection, function(model){ 
-		        model.remove(function (err, data) {
-					if (err) console.log(err);
-					else console.log('Deleted : ', data );
-				});
-		    }); 
+			// _.each(collection, function(model){ 
+		 //        model.remove(function (err, data) {
+			// 		if (err) console.log(err);
+			// 		else console.log('Deleted : ', data );
+			// 	});
+		 //    }); 
 
-		    _.each(collection, function(model){ 
-		        model.save(function (err, data) {
-					if (err) console.log(err);
-					else console.log('Saved : ', data );
-				});
-		    }); 
+		 //    _.each(collection, function(model){ 
+		 //        model.save(function (err, data) {
+			// 		if (err) console.log(err);
+			// 		else console.log('Saved : ', data );
+			// 	});
+		 //    }); 
 		    res.json({ success: true });
 		};
 		// seed data into the DB, normally you will protect your password by hashing it
@@ -86,14 +86,6 @@ module.exports = function(app, port, rootPath, apiRoutes) {
 	});
 
 	// API Routes below
-	app.get('/api/authenticate', function (req, res) {
-		res.send({
-			success: true,
-			message: "Enjoy your token!",
-			token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6InRlc3QiLCJ1c2VyUHdkIjoiJDJhJDEyJGd6N01XU1VpQmdxSDVYemtiaEFnLmVqa1gxMTRRNy9iYloxVG1iRm5zQnpZSVNGZUV1ZE9LIiwiaWF0IjoxNDg4MTUxNTQ1LCJleHAiOjE0ODk2NTE1NDV9.IGF9IwOmNYSPAjOSBb2UmkC0VUC0k9reZh9clGK9vzY"
-		});
-	});
-
 	app.post('/api/authenticate', function (req, res) {
 		res.send({
 			success: true,
@@ -106,16 +98,6 @@ module.exports = function(app, port, rootPath, apiRoutes) {
 		// 	password: req.body.pwd
 		// }, function(err, user) {
 		// 	if (err) throw err;
-		// 	// if(err.name == 'TokenExpiredError') {
-		// 	// 	return res.status(400).json({
-		// 	// 		error: 'Token is expired.'
-		// 	// 	});
-		// 	// } else if(err.name == 'JsonWebTokenError') {
-		// 	// 	return res.status(401).json({
-		// 	// 		error: 'Invalid Token.'
-		// 	// 	});
-		// 	// }
-
 		// 	if(!user) {
 		// 		res.send({ 
 		// 			success: false, 
