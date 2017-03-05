@@ -20,7 +20,7 @@
 			// 'angularjs-dropdown-multiselect'
 		])
 		.factory('myCache', function($cacheFactory) {
-			return $cacheFactory('myCache', {capacity:10});
+			return $cacheFactory('myCache');
 		})
 		.config(['$httpProvider', function($httpProvider) {
 			$httpProvider.defaults.headers.common["X-Requested-With"] = 'XmlHttpRequest';

@@ -259,7 +259,8 @@
                     headers: {
                         'Content-Type': 'application/json;charset=UTF-8',
                         // 'Authorization': $rootScope.token || $window.sessionStorage.act
-                    }
+                    },
+                    cache: true
 	            };
 	            return httpPromise(vObj);
 			};
