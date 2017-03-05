@@ -1,5 +1,5 @@
 # ignore all files in the dist directory
-app/dist/*
+#app/dist/*
 
 # ignore all files that end with a tilde, this are temp files
 *~
