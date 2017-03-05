@@ -10,7 +10,7 @@ WORKDIR /src
 
 # Install app dependencies
 COPY package.json /src
-#RUN npm install
+RUN npm install
 
 # Bundle src source
 COPY . /src
