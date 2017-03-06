@@ -1,0 +1,87 @@
+<div ng-controller="ContactController">
+	<mock-header></mock-header>
+
+	<div growl></div>
+	<div class="bodyContainer f2f6f6">
+		<div class="bodyContent" id="ns_content">
+			<div class="row mg-left-20" style="background-image:url(/img/contactus.jpg);height:250px;"></div>
+			<div class="mg-left-20">
+				<h3><strong>PortalWorks SSCEexams</strong></h3>
+			</div>
+			<div>
+				<div class="col-md-4">
+					<div class="col-md-12" style="display:inline-flex;">
+						<div class="location-section mg-top-20 col-md-1">
+							<a class="pd-left-15" href="https://maps.google.co.uk/maps?q=1990+N+California+Blvd.+Suite+500+Walnut+Creek+San+Francisco+CA+94596+USA&hl=en&ll=37.906655,-122.065980&spn=0.009089,0.019076&sll=37.906655,-122.065980&sspn=0.036357,0.076303&hnear=1990+N+California+Blvd.+Suite+500+Walnut+Creek+San+Francisco+CA+94596+United+States&t=m&z=16&iwloc=A" target="_blank">
+								<img alt="Atlanta Office" src="/img/atlanta-office.png" />
+							</a>
+						</div>
+						<div class="col-md-10 mg-top-20" style="margin-bottom:2em;font-size:12px;">
+							<h4 class="media-heading"><strong>Birmingham Office</strong></h4>
+							<p style="margin:0 0 1em 0;">PortalWorks Solutions LLC</p>
+							<p style="margin:0 0 1em 0;">407 West Park Dr</p>
+							<p style="margin:0 0 1em 0;">Fultondale, AL 35068</p>
+							<p style="margin:0 0 1em 0;">USA</p>
+							<p style="margin:0 0 1em 0;">Tel: <span class="cell-number">+1 256 604 PWORKS (6791)</span></p>								
+						</div>
+					</div>
+					<div class="col-md-12" style="display:inline-flex;">
+						<div class="location-section mg-top-20 col-md-1">
+							<a class="pd-left-15" href="https://www.google.com/maps/place/25+W+Red+Oak+Ln,+White+Plains,+NY+10604/@41.0159448,-73.7248958,17z/data=!3m1!4b1!4m2!3m1!1s0x89c296eb1fa7c7e7:0xa8459bd25691472e" target="_blank">
+								<img alt="Atlanta Office" src="/img/atlanta-office.png" />
+							</a>
+						</div>
+						<div class="col-md-10 mg-top-20" style="margin-bottom:2em;font-size:12px;">
+							<h4 class="media-heading"><strong>Atlanta Office</strong></h4>
+							<p style="margin:0 0 1em 0;">PortalWorks Solutions LLC</p>
+							<p style="margin:0 0 1em 0;">1289 Adanline Way</p>
+							<p style="margin:0 0 1em 0;">Atlanta, GA 31145</p>
+							<p style="margin:0 0 1em 0;">USA</p>
+							<p style="margin:0 0 1em 0;">Tel: <span class="cell-number">+1 256 893 PWORKS (9002)</span></p>								
+						</div>
+					</div>
+				</div>
+			    <div class="col-md-8 mg-bottom-20 pd-bottom-20">
+			    	<div style="margin-bottom:1em;font-size:12px;">
+			    		<h4 class="form-group maxwidth80pct pd-left-20 media-heading"><strong>Contact a Representative</strong></h4>
+			    		<div class="form-group maxwidth80pct pd-left-20">
+						  <input type="text" class="form-control" id="fname" placeholder="First Name">
+						</div>
+						<div class="form-group maxwidth80pct pd-left-20">
+						  <input type="text" class="form-control" id="lname" placeholder="Last Name">
+						</div>
+						<div class="form-group maxwidth80pct pd-left-20">
+						  <input type="email" class="form-control" id="email" placeholder="Email Address">
+						</div>
+						<div class="form-group maxwidth80pct pd-left-20">
+						  <input type="text" class="form-control" id="phone" placeholder="Phone">
+						</div>
+						<div class="form-group maxwidth80pct pd-left-20">
+						  <input type="text" class="form-control" id="cname" placeholder="Company Name">
+						</div>
+						<div class="form-group maxwidth80pct pd-left-20 mg-bottom-20">
+						  <select id="country" class="form-control" name="country" title"Select your country">
+						  	<option ng-repeat="ct in countrylist" value="{{ct.ctry}}">{{ct.name}}</option>
+						  </select>
+						</div>
+						<div class="form-group maxwidth80pct pd-left-20">
+						  <input type="text" class="form-control" id="jtitle" placeholder="Job Title">
+						</div>
+					</div>
+
+					<div class="subheadertabs form-group mg-right-10 mg-left-15 mg-top-20">
+						<a ng-click="contactus()">Contact Us</a>
+					</div>
+			    </div>
+			</div>    
+		</div>
+	</div>
+	
+	<mock-footer></mock-footer>
+
+	<script>
+		$(function () {
+		  $('[data-toggle="popover"]').popover()
+		})
+	</script>
+</div>
