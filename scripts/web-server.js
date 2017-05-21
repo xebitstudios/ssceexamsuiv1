@@ -34,6 +34,6 @@ app.get('*', function(req, res) {
 	res.sendFile(rootPath + '/app/index.html');
 });
 
-app.listen(port, '127.0.0.1', function() {
+app.listen(port, '0.0.0.0', function() {
 	console.log('Express started on ' + port + ';. press Ctrl-C to terminate.');
 });
