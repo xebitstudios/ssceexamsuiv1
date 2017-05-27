@@ -1,4 +1,4 @@
-module.exports = function(app, port, rootPath, apiRoutes) {
+module.exports = function(app, port, rootPath, apiRoutes, cors, corsOptions) {
 	console.log('just entered subjsApi');
 	var _ = require('underscore');
 	var mongoose = require('mongoose');

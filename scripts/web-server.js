@@ -7,7 +7,7 @@ var bodyParser = require('body-parser');
 var morgan = require('morgan');
 var mongoose = require('mongoose');
 
-var whitelist = ['http://34.225.111.67', 'http://localhost:8065']
+var whitelist = ['http://34.225.111.67', 'http://localhost:8065'];
 var corsOptions = {
   origin: function (origin, callback) {
     if (whitelist.indexOf(origin) !== -1) {
@@ -16,7 +16,7 @@ var corsOptions = {
       callback(new Error('Not allowed by CORS'))
     }
   }
-}
+};
 // var corsOptions = {
 //   origin: 'http://localhost:8065',
 //   optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204 
@@ -40,11 +40,11 @@ var apiRoutes = express.Router();
 
 // Common API Routes
 // var testApi = require(rootPath +   '/app/js/API/testApi')(app);
-var dbApi = require(rootPath +   '/app/js/dbApi')(app, port, rootPath, apiRoutes);
-var analyticsApi = require(rootPath +   '/app/js/analyticsApi')(app, port, rootPath, apiRoutes);
-var queryApi = require(rootPath +   '/app/js/queryApi')(app, port, rootPath, apiRoutes);
-var subjsApi = require(rootPath +   '/app/js/subjsApi')(app, port, rootPath, apiRoutes);
-var usersApi = require(rootPath +   '/app/js/usersApi')(app, port, rootPath, apiRoutes);
+var dbApi = require(rootPath +   '/app/js/dbApi')(app, port, rootPath, apiRoutes, cors, corsOptions);
+var analyticsApi = require(rootPath +   '/app/js/analyticsApi')(app, port, rootPath, apiRoutes, cors, corsOptions);
+var queryApi = require(rootPath +   '/app/js/queryApi')(app, port, rootPath, apiRoutes, cors, corsOptions);
+var subjsApi = require(rootPath +   '/app/js/subjsApi')(app, port, rootPath, apiRoutes, cors, corsOptions);
+var usersApi = require(rootPath +   '/app/js/usersApi')(app, port, rootPath, apiRoutes, cors, corsOptions);
 
 app.get('*', function(req, res) {
 	res.sendFile(rootPath + '/app/index.html');
