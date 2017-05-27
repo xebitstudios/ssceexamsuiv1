@@ -10,7 +10,7 @@ module.exports = function(app, port, rootPath, apiRoutes) {
 	// define the schemas you want to query and try them out as below
 
 	// get active available user details
-	apiRoutes.get('/users/all', function(req, res) {
+	apiRoutes.get('/users/all', cors(corsOptions), function(req, res) {
 		User.find({
 		}, function(err, users) {
 		  if (err) throw err;
@@ -24,7 +24,7 @@ module.exports = function(app, port, rootPath, apiRoutes) {
 	});
 
 	// get active available user details
-	apiRoutes.get('/users/active', function(req, res) {
+	apiRoutes.get('/users/active', cors(corsOptions), function(req, res) {
 		User.find({
 			"status": "active"
 		}, function(err, users) {
@@ -39,7 +39,7 @@ module.exports = function(app, port, rootPath, apiRoutes) {
 	});
 
 	// get list of all users using a specific accesscode
-	apiRoutes.get('/users/code', function(req, res) {
+	apiRoutes.get('/users/code', cors(corsOptions), function(req, res) {
 		// http://localhost:8066/api/users/code?acode=FREE50
 		console.log(req.query.acode);
 		User.find({
@@ -56,7 +56,7 @@ module.exports = function(app, port, rootPath, apiRoutes) {
 	});
 
 	// get list of all users using a specific subscriptionlevel
-	apiRoutes.get('/users/level', function(req, res) {
+	apiRoutes.get('/users/level', cors(corsOptions), function(req, res) {
 		// http://localhost:8066/api/users/level?dlevel=free
 		console.log(req.query.acode);
 		User.find({
@@ -74,7 +74,7 @@ module.exports = function(app, port, rootPath, apiRoutes) {
 
 	// find a specific user details using the username and password - WORKS!
 	// http://localhost:8066/api/finduser?uname=bawo&pword=oyowe
-	apiRoutes.get('/finduser', function(req, res) {
+	apiRoutes.get('/finduser', cors(corsOptions), function(req, res) {
 		// http://localhost:8066/api/finduser?uname=bawo&pword=oyowe
 		console.log(req.query.uname);
 		console.log(req.query.pword);
@@ -93,7 +93,7 @@ module.exports = function(app, port, rootPath, apiRoutes) {
 	});
 
 	// find a specific user details using the username and password - WORKS!
-	apiRoutes.get('/finduser/count', function(req, res) {
+	apiRoutes.get('/finduser/count', cors(corsOptions), function(req, res) {
 		// http://localhost:8066/api/finduser/count?uname=bawo&pword=oyowe
 		console.log(req.query.uname);
 		console.log(req.query.pword);
@@ -111,7 +111,7 @@ module.exports = function(app, port, rootPath, apiRoutes) {
 		});
 	});
 
-	apiRoutes.get('/userss', function(req, res) {
+	apiRoutes.get('/userss', cors(corsOptions), function(req, res) {
 		console.log('Querying for the Users list.');
 	    res.json({
 			data: {
@@ -129,7 +129,7 @@ module.exports = function(app, port, rootPath, apiRoutes) {
 	//     "action": "",
 	//     "actiondate": ""
 	// }
-	apiRoutes.post('/contactus', function(req, res) {
+	apiRoutes.post('/contactus', cors(corsOptions), function(req, res) {
 		console.log('Contact us note received below.');
 		// console.log(req.body.text);
 		var acontactus = new ContactUs({
@@ -157,7 +157,7 @@ module.exports = function(app, port, rootPath, apiRoutes) {
 		});
 	});
 	
-	apiRoutes.post('/registeruser', function(req, res) {
+	apiRoutes.post('/registeruser', cors(corsOptions), function(req, res) {
 		// http://localhost:8066/api/registeruser?susr=adetunji&spwd=xebitstudios
 		console.log('Registering a new User with specified details: ' + req.query.susr + ', and password: ' + req.query.spwd);
 		console.log(req.query.susr);
@@ -169,7 +169,7 @@ module.exports = function(app, port, rootPath, apiRoutes) {
 		});
 	});
 
-	apiRoutes.post('/user/member', function(req, res) {
+	apiRoutes.post('/user/member', cors(corsOptions), function(req, res) {
 		// http://localhost:8066/api/user/member/?name=bawo&password=oyowe
 		console.log('Querying for the User with specified name: ' + req.query.name + ', and password: ' + req.query.password);
 		console.log(req.query.name);
@@ -188,7 +188,7 @@ module.exports = function(app, port, rootPath, apiRoutes) {
 	    });
 	});
 
-	apiRoutes.get('/user/:id?', function(req, res) {
+	apiRoutes.get('/user/:id?', cors(corsOptions), function(req, res) {
 		console.log('Querying for the User with specified ID.' + req.query.id);
 		console.log(req.query.id);
 	    User.findOne({
@@ -204,7 +204,7 @@ module.exports = function(app, port, rootPath, apiRoutes) {
 	    });
 	});
 
-	apiRoutes.delete('/user/:id?', function(req, res) {
+	apiRoutes.delete('/user/:id?', cors(corsOptions), function(req, res) {
 		console.log('Deleting for the User with specified ID.' + req.query.id);
 		console.log(req.query.id);
 	    User.remove({
@@ -220,7 +220,7 @@ module.exports = function(app, port, rootPath, apiRoutes) {
 	    });
 	});
 
-	apiRoutes.put('/user/:id?', function(req, res) {
+	apiRoutes.put('/user/:id?', cors(corsOptions), function(req, res) {
 		console.log('Updating the User with specified ID.' + req.query.id);
 		console.log(req.query.id);
 		console.log(req.body.name);
@@ -240,7 +240,7 @@ module.exports = function(app, port, rootPath, apiRoutes) {
 	    });
 	});
 
-	apiRoutes.post('/user', function(req, res) {
+	apiRoutes.post('/user', cors(corsOptions), function(req, res) {
 		console.log('Adding a User with POST');
 		var newUser = new User({ 
 			name: 'Yemisi', 

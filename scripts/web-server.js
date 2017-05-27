@@ -1,10 +1,26 @@
 var express = require('express');
 var path = require('path');
+var cors = require('cors')
 var app = express();
 
 var bodyParser = require('body-parser');
 var morgan = require('morgan');
 var mongoose = require('mongoose');
+
+var whitelist = ['http://34.225.111.67', 'http://localhost:8065']
+var corsOptions = {
+  origin: function (origin, callback) {
+    if (whitelist.indexOf(origin) !== -1) {
+      callback(null, true)
+    } else {
+      callback(new Error('Not allowed by CORS'))
+    }
+  }
+}
+// var corsOptions = {
+//   origin: 'http://localhost:8065',
+//   optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204 
+// }
 
 // Configuration
 var rootPath = path.normalize(__dirname + '/../');

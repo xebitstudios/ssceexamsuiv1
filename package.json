@@ -19,6 +19,7 @@
     "download": "^4.4.3",
     "event-stream": "^3.3.4",
     "gulp-htmlmin": "^3.0.0",
+    "cors": "^2.8.3",
     "gulp-minify": "0.0.7",
     "jsonwebtoken": "^7.1.9",
     "jquery": "^2.1.4",

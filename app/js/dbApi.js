@@ -75,30 +75,30 @@ module.exports = function(app, port, rootPath, apiRoutes) {
 
 	// app.set('superSecret', config.secret); // secret variable
 
-	var allowCors = function(req, res, next) {
-		res.header('Access-Control-Allow-Origin', '*');
-		// res.header('Access-Control-Allow-Origin', 'http://54.172.215.160:8065');		
-		res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
-		res.header('Access-Control-Allow-Headers', 'Content-Type');
-		res.header('Access-Control-Allow-Credentials', 'true');
-		next();
-	};
+	// var allowCors = function(req, res, next) {
+	// 	res.header('Access-Control-Allow-Origin', '*');
+	// 	// res.header('Access-Control-Allow-Origin', 'http://54.172.215.160:8065');		
+	// 	res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
+	// 	res.header('Access-Control-Allow-Headers', 'Content-Type');
+	// 	res.header('Access-Control-Allow-Credentials', 'true');
+	// 	next();
+	// };
 
-	app.use(allowCors);
+	// app.use(allowCors);
 
-	app.get('/api/ingestlogs', function(req, res) {
+	app.get('/api/ingestlogs', cors(corsOptions), function(req, res) {
 		console.log('Ingested log data is: ');
 		console.log(req.body);
 		res.send('Ingested log data received');
 	});
 
 	// DB and Token Test APIs
-	apiRoutes.get('/', function(req, res) {
+	apiRoutes.get('/', cors(corsOptions), function(req, res) {
 		res.send('Hello! The API is at http://localhost:' + port + '/api');
 	});
 
 	// Login a User with the supplied Username and Password
-	app.post('/api/user/login', function(req, res) {
+	app.post('/api/user/login', cors(corsOptions), function(req, res) {
 		console.log('User login data is: ');
 		console.log('req.body.username is: ' + req.body.username);
 		User.findOne({
@@ -119,7 +119,7 @@ module.exports = function(app, port, rootPath, apiRoutes) {
 	});
 	
 	// Create a new User and save to the database
-	app.post('/api/user/create', function(req, res) {
+	app.post('/api/user/create', cors(corsOptions), function(req, res) {
 		console.log('Creating new User with data');
 		console.log('req.body.username is: ' + req.body.username);
 		var auser = new User({
@@ -151,7 +151,7 @@ module.exports = function(app, port, rootPath, apiRoutes) {
 	});
 
 	// Get all the users
-	app.get('/api/users', function(req, res) {
+	app.get('/api/users', cors(corsOptions), function(req, res) {
 		console.log('Users list data is: ');
 		User.find({}, function(err, users) {
 			if (err) {
@@ -169,7 +169,7 @@ module.exports = function(app, port, rootPath, apiRoutes) {
 		});
 	});
 
-	// apiRoutes.get('/setup', function(req, res) {
+	// apiRoutes.get('/setup', cors(corsOptions), function(req, res) {
 	// 	function seedDBFunction(collection){ 
 	// 		// _.each(collection, function(model){ 
 	// 	 //        model.remove(function (err, data) {

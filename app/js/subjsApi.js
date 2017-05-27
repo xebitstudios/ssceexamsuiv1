@@ -5,7 +5,7 @@ module.exports = function(app, port, rootPath, apiRoutes) {
 	var Schema = mongoose.Schema;
 
 	// check the request for certain items and reject if seen
-	var checkRequest = function(req, res) {
+	var checkRequest = cors(corsOptions), function(req, res) {
 		if (req.query.expired) {
 			res.json({
 				status: 403,
@@ -36,7 +36,7 @@ module.exports = function(app, port, rootPath, apiRoutes) {
 	});
 
 	// Routes for getting the exam JSON data
-	apiRoutes.get('/agricsci/1988', function(req, res) {
+	apiRoutes.get('/agricsci/1988', cors(corsOptions), function(req, res) {
 		if(!req.body.go) {
 			res.json({ status: 500, reason: 'Access denied - Unauthorized user.'});
 		} else {
@@ -708,7 +708,7 @@ module.exports = function(app, port, rootPath, apiRoutes) {
 		}
 	});
 
-	apiRoutes.get('/agricsci/1989', function(req, res) {
+	apiRoutes.get('/agricsci/1989', cors(corsOptions), function(req, res) {
 		if(!req.body.go) {
 			res.json({ status: 500, reason: 'Access denied - Unauthorized user.'});
 		} else {
@@ -1382,7 +1382,7 @@ module.exports = function(app, port, rootPath, apiRoutes) {
 		}
 	});
 
-	apiRoutes.get('/agricsci/1990', function(req, res) {
+	apiRoutes.get('/agricsci/1990', cors(corsOptions), function(req, res) {
 		if(!req.body.go) {
 			res.json({ status: 500, reason: 'Access denied - Unauthorized user.'});
 		} else {
@@ -2066,7 +2066,7 @@ module.exports = function(app, port, rootPath, apiRoutes) {
 		}
 	});
 
-	apiRoutes.get('/econ/1988', function(req, res) {
+	apiRoutes.get('/econ/1988', cors(corsOptions), function(req, res) {
 		if(!req.body.go) {
 			res.json({ status: 500, reason: 'Access denied - Unauthorized user.'});
 		} else {
@@ -2520,7 +2520,7 @@ module.exports = function(app, port, rootPath, apiRoutes) {
 		}
 	});
 
-	apiRoutes.get('/econ/1989', function(req, res) {
+	apiRoutes.get('/econ/1989', cors(corsOptions), function(req, res) {
 		if(!req.body.go) {
 			res.json({ status: 500, reason: 'Access denied - Unauthorized user.'});
 		} else {
@@ -2972,7 +2972,7 @@ module.exports = function(app, port, rootPath, apiRoutes) {
 		}
 	});
 
-	apiRoutes.get('/econ/1990', function(req, res) {
+	apiRoutes.get('/econ/1990', cors(corsOptions), function(req, res) {
 		if(!req.body.go) {
 			res.json({ status: 500, reason: 'Access denied - Unauthorized user.'});
 		} else {
@@ -3425,7 +3425,7 @@ module.exports = function(app, port, rootPath, apiRoutes) {
 		}
 	});
 
-	apiRoutes.get('/english/1988', function(req, res) {
+	apiRoutes.get('/english/1988', cors(corsOptions), function(req, res) {
 		if(!req.body.go) {
 			res.json({ status: 500, reason: 'Access denied - Unauthorized user.'});
 		} else {
@@ -4545,7 +4545,7 @@ module.exports = function(app, port, rootPath, apiRoutes) {
 		}
 	});
 
-	apiRoutes.get('/english/1989', function(req, res) {
+	apiRoutes.get('/english/1989', cors(corsOptions), function(req, res) {
 		if(!req.body.go) {
 			res.json({ status: 500, reason: 'Access denied - Unauthorized user.'});
 		} else {
@@ -5719,7 +5719,7 @@ module.exports = function(app, port, rootPath, apiRoutes) {
 		}
 	});
 
-	apiRoutes.get('/english/1990', function(req, res) {
+	apiRoutes.get('/english/1990', cors(corsOptions), function(req, res) {
 		if(!req.body.go) {
 			res.json({ status: 500, reason: 'Access denied - Unauthorized user.'});
 		} else {
@@ -6543,7 +6543,7 @@ module.exports = function(app, port, rootPath, apiRoutes) {
 		}
 	});
 
-	apiRoutes.get('/litineng/1988', function(req, res) {
+	apiRoutes.get('/litineng/1988', cors(corsOptions), function(req, res) {
 		if(!req.body.go) {
 			res.json({ status: 500, reason: 'Access denied - Unauthorized user.'});
 		} else {
@@ -8087,7 +8087,7 @@ module.exports = function(app, port, rootPath, apiRoutes) {
 		}
 	});
 	
-	apiRoutes.get('/geography/1988', function(req, res) {
+	apiRoutes.get('/geography/1988', cors(corsOptions), function(req, res) {
 		if(!req.body.go) {
 			res.json({ status: 500, reason: 'Access denied - Unauthorized user.'});
 		} else {
@@ -8661,7 +8661,7 @@ module.exports = function(app, port, rootPath, apiRoutes) {
 		}
 	});
 
-	apiRoutes.get('/geography/1989', function(req, res) {
+	apiRoutes.get('/geography/1989', cors(corsOptions), function(req, res) {
 		if(!req.body.go) {
 			res.json({ status: 500, reason: 'Access denied - Unauthorized user.'});
 		} else {
@@ -9234,7 +9234,7 @@ module.exports = function(app, port, rootPath, apiRoutes) {
 		}
 	});
 
-	apiRoutes.get('/geography/1990', function(req, res) {
+	apiRoutes.get('/geography/1990', cors(corsOptions), function(req, res) {
 		if(!req.body.go) {
 			res.json({ status: 500, reason: 'Access denied - Unauthorized user.'});
 		} else {
@@ -9807,7 +9807,7 @@ module.exports = function(app, port, rootPath, apiRoutes) {
 		}
 	});
 	
-	apiRoutes.get('/govt/1988', function(req, res) {
+	apiRoutes.get('/govt/1988', cors(corsOptions), function(req, res) {
 		if(!req.body.go) {
 			res.json({ status: 500, reason: 'Access denied - Unauthorized user.'});
 		} else {
@@ -10478,7 +10478,7 @@ module.exports = function(app, port, rootPath, apiRoutes) {
 		}
 	});
 
-	apiRoutes.get('/govt/1989', function(req, res) {
+	apiRoutes.get('/govt/1989', cors(corsOptions), function(req, res) {
 		if(!req.body.go) {
 			res.json({ status: 500, reason: 'Access denied - Unauthorized user.'});
 		} else {
@@ -11149,7 +11149,7 @@ module.exports = function(app, port, rootPath, apiRoutes) {
 		}
 	});
 
-	apiRoutes.get('/govt/1990', function(req, res) {
+	apiRoutes.get('/govt/1990', cors(corsOptions), function(req, res) {
 		if(!req.body.go) {
 			res.json({ status: 500, reason: 'Access denied - Unauthorized user.'});
 		} else {
@@ -11820,7 +11820,7 @@ module.exports = function(app, port, rootPath, apiRoutes) {
 		}
 	});
 	
-	apiRoutes.get('/maths/1988', function(req, res) {
+	apiRoutes.get('/maths/1988', cors(corsOptions), function(req, res) {
 		if(!req.body.go) {
 			res.json({ status: 500, reason: 'Access denied - Unauthorized user.'});
 		} else {
@@ -12396,7 +12396,7 @@ module.exports = function(app, port, rootPath, apiRoutes) {
 		}
 	});
 
-	apiRoutes.get('/maths/1989', function(req, res) {
+	apiRoutes.get('/maths/1989', cors(corsOptions), function(req, res) {
 		if(!req.body.go) {
 			res.json({ status: 500, reason: 'Access denied - Unauthorized user.'});
 		} else {
@@ -12979,7 +12979,7 @@ module.exports = function(app, port, rootPath, apiRoutes) {
 		}
 	});
 
-	apiRoutes.get('/maths/1990', function(req, res) {
+	apiRoutes.get('/maths/1990', cors(corsOptions), function(req, res) {
 		if(!req.body.go) {
 			res.json({ status: 500, reason: 'Access denied - Unauthorized user.'});
 		} else {
@@ -13566,7 +13566,7 @@ module.exports = function(app, port, rootPath, apiRoutes) {
 		}
 	});
 	
-	apiRoutes.get('/physics/1988', function(req, res) {
+	apiRoutes.get('/physics/1988', cors(corsOptions), function(req, res) {
 		if(!req.body.go) {
 			res.json({ status: 500, reason: 'Access denied - Unauthorized user.'});
 		} else {
@@ -14243,7 +14243,7 @@ module.exports = function(app, port, rootPath, apiRoutes) {
 		}
 	});
 
-	apiRoutes.get('/physics/1989', function(req, res) {
+	apiRoutes.get('/physics/1989', cors(corsOptions), function(req, res) {
 		if(!req.body.go) {
 			res.json({ status: 500, reason: 'Access denied - Unauthorized user.'});
 		} else {
@@ -14926,7 +14926,7 @@ module.exports = function(app, port, rootPath, apiRoutes) {
 		}
 	});
 
-	apiRoutes.get('/physics/1990', function(req, res) {
+	apiRoutes.get('/physics/1990', cors(corsOptions), function(req, res) {
 		if(!req.body.go) {
 			res.json({ status: 500, reason: 'Access denied - Unauthorized user.'});
 		} else {
@@ -15611,7 +15611,7 @@ module.exports = function(app, port, rootPath, apiRoutes) {
 		}
 	});
 
-	apiRoutes.get('/physics/1991', function(req, res) {
+	apiRoutes.get('/physics/1991', cors(corsOptions), function(req, res) {
 		if(!req.body.go) {
 			res.json({ status: 500, reason: 'Access denied - Unauthorized user.'});
 		} else {
@@ -16297,7 +16297,7 @@ module.exports = function(app, port, rootPath, apiRoutes) {
 		}
 	});
 
-	apiRoutes.get('/commerce/1988', function(req, res) {
+	apiRoutes.get('/commerce/1988', cors(corsOptions), function(req, res) {
 		if(!req.body.go) {
 			res.json({ status: 500, reason: 'Access denied - Unauthorized user.'});
 		} else {
@@ -16305,7 +16305,7 @@ module.exports = function(app, port, rootPath, apiRoutes) {
 		}
 	});
 	
-	apiRoutes.get('/commerce/1989', function(req, res) {
+	apiRoutes.get('/commerce/1989', cors(corsOptions), function(req, res) {
 		if(!req.body.go) {
 			res.json({ status: 500, reason: 'Access denied - Unauthorized user.'});
 		} else {
@@ -17420,7 +17420,7 @@ module.exports = function(app, port, rootPath, apiRoutes) {
 		}
 	});
 
-	apiRoutes.get('/commerce/1990', function(req, res) {
+	apiRoutes.get('/commerce/1990', cors(corsOptions), function(req, res) {
 		if(!req.body.go) {
 			res.json({ status: 500, reason: 'Access denied - Unauthorized user.'});
 		} else {
@@ -18536,7 +18536,7 @@ module.exports = function(app, port, rootPath, apiRoutes) {
 		}
 	});
 
-	apiRoutes.get('/commerce/1991', function(req, res) {
+	apiRoutes.get('/commerce/1991', cors(corsOptions), function(req, res) {
 		if(!req.body.go) {
 			res.json({ status: 500, reason: 'Access denied - Unauthorized user.'});
 		} else {
@@ -19648,7 +19648,7 @@ module.exports = function(app, port, rootPath, apiRoutes) {
 		}
 	});
 
-	apiRoutes.get('/biology/1988', function(req, res) {
+	apiRoutes.get('/biology/1988', cors(corsOptions), function(req, res) {
 		if(!req.body.go) {
 			res.json({ status: 500, reason: 'Access denied - Unauthorized user.'});
 		} else {
@@ -20324,7 +20324,7 @@ module.exports = function(app, port, rootPath, apiRoutes) {
 		}
 	});
 
-	apiRoutes.get('/biology/1989', function(req, res) {
+	apiRoutes.get('/biology/1989', cors(corsOptions), function(req, res) {
 		if(!req.body.go) {
 			res.json({ status: 500, reason: 'Access denied - Unauthorized user.'});
 		} else {
@@ -21009,7 +21009,7 @@ module.exports = function(app, port, rootPath, apiRoutes) {
 		}
 	});
 
-	apiRoutes.get('/chemistry/1988', function(req, res) {
+	apiRoutes.get('/chemistry/1988', cors(corsOptions), function(req, res) {
 		if(!req.body.go) {
 			res.json({ status: 500, reason: 'Access denied - Unauthorized user.'});
 		} else {
@@ -21512,7 +21512,7 @@ module.exports = function(app, port, rootPath, apiRoutes) {
 		}
 	});
 
-	apiRoutes.get('/chemistry/1989', function(req, res) {
+	apiRoutes.get('/chemistry/1989', cors(corsOptions), function(req, res) {
 		if(!req.body.go) {
 			res.json({ status: 500, reason: 'Access denied - Unauthorized user.'});
 		} else {
@@ -22053,7 +22053,7 @@ module.exports = function(app, port, rootPath, apiRoutes) {
 		}
 	});
 
-	apiRoutes.get('/chemistry/1990', function(req, res) {
+	apiRoutes.get('/chemistry/1990', cors(corsOptions), function(req, res) {
 		if(!req.body.go) {
 			res.json({ status: 500, reason: 'Access denied - Unauthorized user.'});
 		} else {
@@ -22589,7 +22589,7 @@ module.exports = function(app, port, rootPath, apiRoutes) {
 		}
 	});
 	
-	// apiRoutes.get('/agricsci/1989', function(req, res) {
+	// apiRoutes.get('/agricsci/1989', cors(corsOptions), function(req, res) {
 	// 	res.json({
 			// data: {}
 		// });

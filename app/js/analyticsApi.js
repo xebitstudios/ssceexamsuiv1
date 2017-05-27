@@ -7,7 +7,7 @@ module.exports = function(app, port, rootPath, apiRoutes) {
 	// Update analytics data on Analytics page based on user selections
 	
 	// Load initial analytics data on Analytics page
-	apiRoutes.get('/getanalyticsdata/12345', function(req, res) {
+	apiRoutes.get('/getanalyticsdata/12345', cors(corsOptions), function(req, res) {
 		res.json({
 			data: {
 				recentexams: {
@@ -205,7 +205,7 @@ module.exports = function(app, port, rootPath, apiRoutes) {
 	});
 
 	// chart 1
-	apiRoutes.post('/analytics/chart1', function(req, res) {
+	apiRoutes.post('/analytics/chart1', cors(corsOptions), function(req, res) {
 		console.log('Getting data for updating Chart1, req is: ');
 		console.log(req.body);
 		res.json({
@@ -219,7 +219,7 @@ module.exports = function(app, port, rootPath, apiRoutes) {
 	});
 
 	// chart 2
-	apiRoutes.post('/analytics/chart2', function(req, res) {
+	apiRoutes.post('/analytics/chart2', cors(corsOptions), function(req, res) {
 		console.log('Getting data for updating Chart2, req is: ');
 		console.log(req.body);
 		res.json({
@@ -239,7 +239,7 @@ module.exports = function(app, port, rootPath, apiRoutes) {
 	});
 
 	// chart 3
-	apiRoutes.post('/analytics/chart3', function(req, res) {
+	apiRoutes.post('/analytics/chart3', cors(corsOptions), function(req, res) {
 		console.log('Getting data for updating Chart3, req is: ');
 		console.log(req.body);
 		res.json({
@@ -259,7 +259,7 @@ module.exports = function(app, port, rootPath, apiRoutes) {
 	});
 
 	// chart 4
-	apiRoutes.post('/analytics/chart4', function(req, res) {
+	apiRoutes.post('/analytics/chart4', cors(corsOptions), function(req, res) {
 		console.log('Getting data for updating Chart4, req is: ');
 		console.log(req.body);
 		res.json({
@@ -285,7 +285,7 @@ module.exports = function(app, port, rootPath, apiRoutes) {
 	});
 
 	// chart 5
-	apiRoutes.post('/analytics/chart5', function(req, res) {
+	apiRoutes.post('/analytics/chart5', cors(corsOptions), function(req, res) {
 		console.log('Getting data for updating Chart5, req is: ');
 		console.log(req.body);
 		res.json({
@@ -307,7 +307,7 @@ module.exports = function(app, port, rootPath, apiRoutes) {
 	});
 
 	// chart 6
-	apiRoutes.post('/analytics/chart6', function(req, res) {
+	apiRoutes.post('/analytics/chart6', cors(corsOptions), function(req, res) {
 		console.log('Getting data for updating Chart6, req is: ');
 		console.log(req.body);
 		res.json({
@@ -328,7 +328,7 @@ module.exports = function(app, port, rootPath, apiRoutes) {
 		});
 	});
 
-	// apiRoutes.get('/analytics/{userid}/rea', function(req, res) {
+	// apiRoutes.get('/analytics/{userid}/rea', cors(corsOptions), function(req, res) {
 	// 	res.json({
 	// 		data: {}
 	// 	});
