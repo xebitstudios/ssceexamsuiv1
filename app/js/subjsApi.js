@@ -5,7 +5,7 @@ module.exports = function(app, port, rootPath, apiRoutes, cors, corsOptions) {
 	var Schema = mongoose.Schema;
 
 	// check the request for certain items and reject if seen
-	var checkRequest = cors(corsOptions), function(req, res) {
+	var checkRequest = function(req, res) {
 		if (req.query.expired) {
 			res.json({
 				status: 403,
