@@ -7,4 +7,4 @@ NodeJS, NPM, Gulp
 1. NPM Install [Needed initially for Gulp dependency]
 2. Open Terminal in main folder
 3. Run 'gulp serve' 
-4. Navigate to localhost:8066
+4. Navigate to localhost:8065
