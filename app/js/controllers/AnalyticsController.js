@@ -647,17 +647,17 @@
         };
 
         $timeout(function(){
-            HeaderService.setTab(2);
             $('div svg text:contains("Highcharts.com")').addClass('hide');
 
             if ($('body').width() < 600) {
               $scope.pgwidth = true;
               $scope.moveon(1);
             } else {
+              HeaderService.setTab(2);
               $scope.pgwidth = false;
             }
             console.log('$scope.pgwidth is: ' + $scope.pgwidth);
-        }, 100);
+        }, 500);
 
     }
 })();
