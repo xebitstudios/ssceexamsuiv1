@@ -53,7 +53,7 @@
             };
 
             $timeout(function(){
-                 HeaderService.setTab(4);
+                 HeaderService.setTab(3);
             }, 100);
 
             $scope.countrylist = [

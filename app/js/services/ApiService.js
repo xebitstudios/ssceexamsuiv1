@@ -114,8 +114,6 @@
 
 			function getAnalyticsdata(userid) {
 				console.log('calling the getAnalyticsdata with user: ' + userid);
-				// console.log('API_URI is: ' + API_URI);
-				console.log('ConfigService.getapi is: ' + ConfigService.getapi());
 				var vObj = {
 	            	method: 'GET',
                     url: ConfigService.getapi() + '/api/getanalyticsdata/' + userid,

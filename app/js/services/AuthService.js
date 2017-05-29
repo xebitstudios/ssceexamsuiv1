@@ -31,7 +31,7 @@
 				console.log('calling postLoginForm... with ' + val.uname + ', ' + val.pwd + '.');
 				var vObj = {
 	            	method: 'POST',
-	                url: '/api/authenticate',
+	                url: ConfigService.getapi() + '/api/authenticate',
 	                data: {
 	                	name: val.uname,
 	                	pwd: val.pwd

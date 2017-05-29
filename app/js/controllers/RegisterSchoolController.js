@@ -8,7 +8,7 @@
     // RegisterSchoolController.$inject = ['$scope', '$log', '$controller', '$rootScope', 'ConfigService', 'ApiService', 'growl', '$location'];
 
     /* @ngInject */
-    function RegisterSchoolController($scope, $log, $controller, $rootScope, ConfigService, ApiService, growl, $location) {
+    function RegisterSchoolController($scope, $log, $controller, $rootScope, $timeout, ConfigService, ApiService, HeaderService, growl, $location) {
 
         $controller('BaseController', {$scope: $scope});
 
@@ -34,6 +34,10 @@
             ApiService.RegisterSchool(schdetails);
             // $location.path(baseRoute);
         };
+
+        $timeout(function(){
+            HeaderService.setTab(5);
+        }, 300);
     }
 
      

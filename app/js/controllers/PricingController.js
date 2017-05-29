@@ -21,7 +21,7 @@
         $scope.inTestcenter();
 
         $timeout(function(){
-           HeaderService.setTab(5);
+           HeaderService.setTab(4);
         }, 100);
 
         $scope.gotoExam = function(subj, url) {
