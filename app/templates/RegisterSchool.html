@@ -1,0 +1,92 @@
+<div ng-controller="RegisterSchoolController">
+	<mock-header></mock-header>
+
+	<div growl></div>
+	<div class="bodyContainer row bdyimg pd-left-20 pd-top-20">
+		<div class="col-md-1 mg-bottom-20"></div>
+		<div class="col-sm-10 tblgridbg mg-left-10 mg-right-10 mg-bottom-20" style="box-shadow: 0 3px 10px rgba(0,0,0,.2);border: 1px solid #e8e8e8;background-color: #fff;border-radius: 6px;">
+			<h3 id="schregval" class="errs mg-top-20 hide" style="">{{schregval}}</h3>
+			<h3 style="text-align:center!important;color:#555459;font-weight:600;" class="mg-bottom-10">New School Application Form</h3>
+    		<div id="registerForm">
+		  		<div class="col-md-12">
+		  			<div class="form-group col-md-12 f14">
+					  <label for="schname">School Name:</label>
+					  <input type="text" class="form-control" id="schname" placeholder="Enter School Name" ng-model="schname">
+					</div>
+					<div class="form-group col-md-12 f14">
+					  <label for="schaddy">School Address:</label>
+					  <textarea class="form-control" rows="3" id="schooladdy" placeholder="Enter School Address" ng-model="schooladdy"></textarea>
+					</div>
+					<div class="form-group col-md-12 f14 mg-top-10">
+					  <label for="schooltype">Select School Type:&nbsp;&nbsp;</label>
+					  <label class="checkbox-inline marginleft30px">
+				        <input type="checkbox" value="" id="prek">Pre-K
+				      </label>
+				      <label class="checkbox-inline marginleft30px">
+				        <input type="checkbox" value="" id="kdgrt">Kindergarten
+				      </label>
+				      <label class="checkbox-inline marginleft30px">
+				        <input type="checkbox" value="" id="nandp">Nursery &amp; Primary
+				      </label>
+				      <label class="checkbox-inline marginleft30px">
+				        <input type="checkbox" value="" id="secon">Secondary
+				      </label>
+				      <label class="checkbox-inline marginleft30px">
+				        <input type="checkbox" value="" id="tert">Tertiary
+				      </label>
+					</div>
+		  			<div class="form-group col-md-6 f14">
+					  <label for="schusername">Choose School Username:</label>
+					  <input type="text" class="form-control" id="schuname" placeholder="Enter username" ng-model="schuname">
+					</div>
+					<div class="form-group col-md-6 f14">
+					  <label for="schpwd">Choose School Password:</label>
+					  <input type="password" class="form-control" id="schpwd" placeholder="Enter password" ng-model="schpwd">
+					</div>
+					<div class="form-group col-md-6 f14">
+					  <label for="contactperson">Contact Person:</label>
+					  <input type="text" class="form-control" id="schctperson" placeholder="Enter School Contact" ng-model="schctperson">
+					</div>
+					<div class="form-group col-md-6 f14">
+					  <label for="email">Contact Email Address:</label>
+					  <input type="email" class="form-control" id="schemail" placeholder="Enter School Email" ng-model="schemail">
+					</div>
+					<div class="form-group col-md-6 f14">
+					  <label for="contactphone">Contact Person Phone:</label>
+					  <input type="text" class="form-control" id="schctphone" placeholder="Enter Phone Number" ng-model="schctphone">
+					</div>
+		    		<div class="form-group col-md-12 f14">
+					  <label for="schoolname">Additional Details:</label>
+				      <textarea class="form-control" rows="6" id="schadd" placeholder="Enter Additional Details about School" ng-model="schadd"></textarea>
+					</div>
+					<div class="form-group col-md-6 f14">
+					  <label for="subscription">Subscription Type:</label>&nbsp;&nbsp;
+					  <div class="radio-inline marginleft30px">
+					      <label><input type="radio" name="optradio" id="schfree">Free</label>
+					  </div>
+					  <div class="radio-inline marginleft30px">
+					      <label><input type="radio" name="optradio" id="schbasic">Basic</label>
+					  </div>
+					  <div class="radio-inline disabled marginleft30px">
+					      <label><input type="radio" name="optradio" id="schprm">Premium</label>
+					  </div>
+					</div>
+				</div>
+	    	</div>
+	    	<div class="divcenter mg-bottom-20 mg-top-10 feature-list col-md-12">
+				<a class="grnbtn col-md-6 mg-bottom-10" ng-click="registernewschool()" style="border:1px solid #ccc;font-size: 14px;margin:auto;float:none;padding:10px 20px 10px 20px;">
+					Submit Application
+				</a>
+			</div>
+		</div>
+		<div class="col-md-1 mg-bottom-20"></div>
+	</div>
+	
+	<mock-footer></mock-footer>
+
+	<script>
+		$(function () {
+		  $('[data-toggle="popover"]').popover()
+		})
+	</script>
+</div>

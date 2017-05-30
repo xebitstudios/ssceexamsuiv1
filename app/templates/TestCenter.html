@@ -1,0 +1,68 @@
+<div ng-controller="TestcenterController">
+	<mock-header></mock-header>
+
+	<div growl></div>
+	<div class="bodyContainer f2f6f6">
+		<!-- <div class="bodyContent" id="ns_content"> -->
+			<div class="col-sm-12 mg-top-20 mg-left-20">
+				<div class="subheadertabs inline">
+					<a id="selopt" class="floatleftmarginb10 bflor" ng-click="setRealtimeScore()">
+						<input id="rtscore" type="checkbox" name="rtscore" value=""> Enable Realtime Scoring<br> 
+					</a>
+				</div>
+				<div class="subheadertabs inline">
+					<a id="selSvd" class="floatleftmarginb10 bflor" ng-click="continueExams()">
+						<input id="svdexms" type="checkbox" name="svdexms" value=""> Continue Saved Exams ?<br> 
+					</a>
+				</div>
+		    </div>
+		    <div class="col-sm-12" style="clear:both;">
+			      <div id="examSubjListView" class="">
+			      	<div class="" id="examsubj">
+			      		<ul class="feature-list">
+			      			<li ng-repeat="subj in examsubjects" style="background-color:{{subj.bgcolor}};border-bottom: 4px solid #2ab27b;">
+					  		  <img src="/img/{{subj.image}}" style="width:100%;">
+					  		  <a ng-click="gotoExam(subj.name, subj.href)" title="{{subj.name}} Exams">
+					  		    <h3 class="is_link" style="background-color:#fff;border:1px solid #fff;border-radius:6px;padding:4px;">{{subj.name}}</h3>
+					  		  </a>
+					  		  <p><strong>Exam Name: {{subj.examlist.join()}}</strong></p>
+					  		  <div style="word-wrap: break-word;">
+							    <strong>Available Years:</strong> {{subj.availyears.join()}}.
+						      </div>
+					  		</li>
+			      		</ul>
+					</div>
+				  </div>
+		    </div>	    
+		<!-- </div> -->
+	</div>
+
+	<mock-footer></mock-footer>
+	<modal-dialog show='svdexmmodal.modalShown' dialog-title="" class="modal-size-1 fade-in-out" on-close='logClose()'>
+		<div class="col-md-12 col-sm-12 mg-top-10 pd-bottom-25 pd-left-10 pd-right-10">
+			<h3 style="text-align:center!important;color:#000;" class="mg-bottom-10"><em>Available Saved Exams: {{svdexmCount}}</em></h3>
+			<!-- <h4 style="text-align:center!important;"><strong>You Answered Correctly:</strong> {{getpassed()}}/{{qstlength()}} Questions.</h4> -->
+			<div class="mg-bottom-20 mg-left-20" style="text-align: left; position:relative; width: 100%; border-width: 1px 0 0 0;">
+				<!-- <button type="button" class="btn btn-warning" ng-click="gotoTC()">TestCenter</button> -->
+				<div>
+					<div><input id="svdexmvl" type="checkbox" name="svdexmvl" value="">&nbsp;&nbsp; 1988 Mathematics Objective Test.</div>
+					<div><input id="svdexmvl" type="checkbox" name="svdexmvl" value="">&nbsp;&nbsp; 1996 English Objective Test.</div>
+					<div><input id="svdexmvl" type="checkbox" name="svdexmvl" value="">&nbsp;&nbsp; 2011 Chemistry Objective Test.</div>
+					<div><input id="svdexmvl" type="checkbox" name="svdexmvl" value="">&nbsp;&nbsp; 1998 English Objective Test.</div>
+					<div><input id="svdexmvl" type="checkbox" name="svdexmvl" value="">&nbsp;&nbsp; 2014 Chemistry Objective Test.</div>
+				</div>
+			</div>
+			<div class="mg-left-20" style="text-align: left; position:relative; width: 100%; border-width: 1px 0 0 0;">
+				<button type="button" class="mg-right-10 btn btn-success" ng-click="continueExm()">Continue Exam</button>
+				<button type="button" class="mg-right-10 btn btn-info" ng-click="restartExm()">Restart Exam</button>
+				<button type="button" class="mg-right-10 btn btn-warning" ng-click="cancelExm()">Cancel Exam</button>
+			</div>
+		</div>
+	</modal-dialog>
+
+	<script>
+		$(function () {
+		  $('[data-toggle="popover"]').popover()
+		})
+	</script>
+</div>
