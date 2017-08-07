@@ -1,0 +1,42 @@
+Your software order 283139 software has been processed.
+The following are the details.
+
+	Requestor Name : ODUYELA, ADETUNJI
+	ATT UID    : ao0040
+	Phone          : 16786574785
+	Address        : 675 W PEACHTREE ST NW 10006
+	City           : ATLANTA, GA 30308
+
+Software Ordered: 
+
+	Vendor         : ORACLE
+	Product        : VIRTUALBOX 5.0.32
+	Platform       : INTEL WINDOWS 7 (64 BIT)
+	Host Name      : gacdtl001ao0040.ITServices.sbc.com
+	Media File     : VirtualBox-5.0.32-112930-Win.exe
+	Status         : Media file ready for FTP
+
+
+Electronic delivery products that are approved are ready for you to ftp from our FTP Site. They will be available for you to transfer for the next 7 days.
+You can download the software by either of the following methods:
+
+Using a web browser:
+	Enter the URL https://urldefense.proofpoint.com/v2/url?u=ftp-3A__software.it.att.com_software_f2030b3a-2D073c-2D469d-2D9e62-2D8dbbf5238db6&d=DwICAg&c=eIGjsITfXP_y-DLLX0uEHXJvU8nOHrUK8IrwNKOtkVU&r=4y9s0YKlsJz_4T9YLEMI4VW_AOOjf3Aj-pc6OpaQ678&m=OPW8ynJOmVQBpHBTcUhOT-ng5kmtZZYiMXYsXvtzhow&s=ZX-m3qxuVK1zS4QT0wv9M_DzooZ0RabIIdKNTdtQmTw&e= 
+
+Using FTP:
+	ftp software.it.att.com (130.6.54.134)
+	Enter anonymous at the 'Name' prompt.
+	Enter your ATT E-Mail Address at the 'Password' prompt.
+	cd software/f2030b3a-073c-469d-9e62-8dbbf5238db6
+	type 'bin' to switch to binary transfer mode.
+	type 'get zip_file_name' to retrieve a single file.
+		  - or - 
+	type 'prompt' if you plan to retrieve multiple files.
+	type 'mget *.zip' if you want to retrieve all of your files.
+
+	For help with unzipping the software click on 
+	https://urldefense.proofpoint.com/v2/url?u=http-3A__software.it.att.com_neworder_unzip-5Fhelp.html&d=DwICAg&c=eIGjsITfXP_y-DLLX0uEHXJvU8nOHrUK8IrwNKOtkVU&r=4y9s0YKlsJz_4T9YLEMI4VW_AOOjf3Aj-pc6OpaQ678&m=OPW8ynJOmVQBpHBTcUhOT-ng5kmtZZYiMXYsXvtzhow&s=ZVJn3hOgqGLZWk2P0O7_nTgtPBWDmihRzL07ZiMBw4w&e= 
+
+If you have any questions or concerns about your software order please contact mixdba@att.com.
+
+Thank you for using software.it.att.com.
