@@ -1,0 +1,49 @@
+Your software order 282883 software has been processed.
+The following are the details.
+
+	Requestor Name : ODUYELA, ADETUNJI
+	ATT UID    : ao0040
+	Phone          : 16786574785
+	Address        : 675 W PEACHTREE ST NW 10006
+	City           : ATLANTA, GA 30308
+
+Software Ordered: 
+
+	Vendor         : ORACLE
+	Product        : VIRTUALBOX 5.0.32
+	Platform       : INTEL WINDOWS 7 (32 bit)
+	Host Name      : gacdtl001ao0040.ITServices.sbc.com
+	Media File     : VirtualBox-5.0.32-112930-Win.exe
+	Status         : Media file ready for FTP
+
+	Vendor         : CENTOS PROJECT
+	Product        : CENTOS IMAGE FOR VIRTUALBOX 7.2
+	Platform       : INTEL WINDOWS 7 (64 BIT)
+	Host Name      : gacdtl001ao0040.ITServices.sbc.com
+	Media File     : centos7_deskimage-111816.zip
+	Status         : Media file ready for FTP
+
+
+Electronic delivery products that are approved are ready for you to ftp from our FTP Site. They will be available for you to transfer for the next 7 days.
+You can download the software by either of the following methods:
+
+Using a web browser:
+	Enter the URL https://urldefense.proofpoint.com/v2/url?u=ftp-3A__software.it.att.com_software_f268b6f2-2Dbc4b-2D4707-2Db911-2D1918fc72b76b&d=DwICAg&c=eIGjsITfXP_y-DLLX0uEHXJvU8nOHrUK8IrwNKOtkVU&r=4y9s0YKlsJz_4T9YLEMI4VW_AOOjf3Aj-pc6OpaQ678&m=aFAAb7QwHSKBOPT3xs9TC4HfyPTjj6KxUezs51x1OzU&s=AHpbSr2m4aE7qh0rah5JRLuBoFbfeLAxxDo9uDsFP-k&e= 
+
+Using FTP:
+	ftp software.it.att.com (130.6.54.134)
+	Enter anonymous at the 'Name' prompt.
+	Enter your ATT E-Mail Address at the 'Password' prompt.
+	cd software/f268b6f2-bc4b-4707-b911-1918fc72b76b
+	type 'bin' to switch to binary transfer mode.
+	type 'get zip_file_name' to retrieve a single file.
+		  - or - 
+	type 'prompt' if you plan to retrieve multiple files.
+	type 'mget *.zip' if you want to retrieve all of your files.
+
+	For help with unzipping the software click on 
+	https://urldefense.proofpoint.com/v2/url?u=http-3A__software.it.att.com_neworder_unzip-5Fhelp.html&d=DwICAg&c=eIGjsITfXP_y-DLLX0uEHXJvU8nOHrUK8IrwNKOtkVU&r=4y9s0YKlsJz_4T9YLEMI4VW_AOOjf3Aj-pc6OpaQ678&m=aFAAb7QwHSKBOPT3xs9TC4HfyPTjj6KxUezs51x1OzU&s=QIyV6hclwv7XHisrKYSK46M0BtzgHhoENniQjeym1tk&e= 
+
+If you have any questions or concerns about your software order please contact mixdba@att.com.
+
+Thank you for using software.it.att.com.
