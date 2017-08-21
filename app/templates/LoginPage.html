@@ -1,0 +1,95 @@
+<div ng-controller="LoginController">
+	<!-- <div class="mg-left-20 mg-right-20" growl></div> -->	
+	<!-- Summary Section -->
+	<div class="col-md-12 bdyimg" id="loginform">
+		<div class="col-md-12 mg-bottom-20"></div>
+		<div class="row mg-top-20 mg-bottom-20">
+			<div class="col-md-4 mg-top-20 mg-bottom-20"></div>
+			<div id="logincard" class="col-md-4 mg-left-10 mg-right-10" style="border: 1px solid #e8e8e8;background-color: #fff;padding: 2rem 4rem 1rem;box-shadow: 0 3px 10px rgba(0,0,0,.2);border-radius: 6px;">
+				<div class="panel-default">				
+				    <h3 id="loginfail" class="errs mg-top-20 hide" style="">{{userlogin}}</h3>
+				    <h1 class="mg-top-20 mg-bottom-20" style="text-align:center;vertical-align:middle;line-height:50px;font-size: 24px;">Welcome to SSCE Exams</h1>
+				    <div class="mg-bottom-20">
+				    	<form>
+						  <fieldset class="form-group">
+						    <input type="text" class="form-control" id="formUsername" placeholder="Enter your username" ng-model="username">
+						  </fieldset>
+						  <fieldset class="form-group mg-top-10 mg-bottom-10">
+						    <input type="text" class="form-control" id="formPassword" placeholder="Create your password" ng-model="pword">
+						  </fieldset>							  
+						</form>
+				    </div>
+					<div class="divcenter mg-bottom-20 feature-list" style="box-shadow: 0 3px 10px rgba(0,0,0,.2);">
+						<a class="grnbtn col-md-6 mg-bottom-10" ng-click="userLogin()" style="width:100%;display:block;border:1px solid #ccc;font-size: 14px;text-decoration: none;">
+							<span class="fa fa-sign-in fa-2 btn"></span>&nbsp;Log In
+						</a>
+						<a class="blubtn col-md-6 mg-bottom-10" ng-click="thesignUp()" style="width:100%;display:block;border:1px solid #ccc;font-size: 14px;text-decoration: none;">
+							<span class="fa fa-user-plus fa-2 btn"></span>&nbsp;New User
+						</a>
+						<a class="grybtn col-md-6 mg-bottom-20" ng-click="theforgot()" style="width:100%;display:block;border:1px solid #ccc;font-size: 14px;text-decoration: none;">
+							<span class="fa fa-archive fa-2 btn linkforgotpassword"></span>&nbsp;Forgot password?
+						</a>
+					</div>
+			    </div>
+			</div>
+			<div id="signupcard" class="hide col-md-4 mg-left-10 mg-right-10" style="border: 1px solid #e8e8e8;background-color: #fff;padding: 2rem 4rem 1rem;box-shadow: 0 3px 10px rgba(0,0,0,.2);border-radius: 6px;">
+				<div class="panel-default">				
+				    <h3 id="regfail" class="errs mg-top-20 hide" style="">{{userreg}}</h3>
+				    <h1 class="mg-top-20 mg-bottom-20" style="text-align:center;vertical-align:middle;line-height:50px;font-size: 24px;">SSCE Exams New User Registration</h1>
+				    <div class="mg-bottom-20">
+				    	<form>
+						  <fieldset class="form-group">
+						    <input type="text" class="form-control" id="arusername" placeholder="Pick a username" ng-model="rusername">
+						  </fieldset>
+						  <fieldset class="form-group mg-top-10 mg-bottom-10">
+						    <input type="text" class="form-control" id="aremail" placeholder="Enter your email address" ng-model="remail">
+						  </fieldset>
+						  <fieldset class="form-group mg-top-10 mg-bottom-10">
+						    <input type="text" class="form-control ppword" id="arpword" placeholder="Create your password" ng-model="rpword">
+						  </fieldset>
+						  <fieldset id="signuptxt" class="form-group mg-bottom-10">
+						    <input type="text" class="form-control ppword mg-bottom-10" id="arrpword" placeholder="Confirm password" ng-model="rrpword">
+						  </fieldset>							  
+						</form>
+				    </div>
+					<div class="divcenter mg-bottom-20 feature-list" style="box-shadow: 0 3px 10px rgba(0,0,0,.2);">
+						<a class="blubtn col-md-6 mg-bottom-10" ng-click="userRegister()" style="width:100%;display:block;border:1px solid #ccc;font-size: 14px;text-decoration: none;">
+							<span class="fa fa-user-plus fa-2 btn"></span>&nbsp;Register User
+						</a>
+						<a class="blubtn col-md-6 mg-bottom-10" ng-click="gotoLogin()" style="width:100%;display:block;border:1px solid #ccc;font-size: 14px;text-decoration: none;">
+							<span class="fa fa-sign-in fa-2 btn"></span>&nbsp;Log In
+						</a>
+					</div>
+			    </div>
+			</div>
+			<div id="forgotcard" class="hide col-md-4 mg-left-10 mg-right-10" style="border: 1px solid #e8e8e8;background-color: #fff;padding: 2rem 4rem 1rem;box-shadow: 0 3px 10px rgba(0,0,0,.2);border-radius: 6px;">
+				<div class="panel-default">				
+				    <h3 id="forgotfail" class="errs mg-top-20 hide" style="">{{userforgot}}</h3>
+				    <h1 class="mg-top-20 mg-bottom-20" style="text-align:center;vertical-align:middle;line-height:50px;font-size: 24px;">Forgot Password?</h1>
+				    <div class="mg-bottom-20">
+				    	<form>
+						  <fieldset class="form-group">
+						    <input type="text" class="form-control" id="fUsername" placeholder="Enter username" ng-model="fpusername">
+						  </fieldset>
+						  <fieldset class="form-group mg-top-10 mg-bottom-10">
+						    <input type="text" class="form-control" id="fEmailaddy" placeholder="Enter email" ng-model="fpemail">
+						  </fieldset>						  
+						</form>
+				    </div>
+					<div class="divcenter mg-bottom-20 feature-list" style="box-shadow: 0 3px 10px rgba(0,0,0,.2);">
+						<a class="grybtn col-md-6 mg-bottom-10" ng-click="sendForgot()" style="width:100%;display:block;border:1px solid #ccc;font-size: 14px;text-decoration: none;">
+							<span class="fa fa-user-plus fa-2 btn"></span>&nbsp;Find Password
+						</a>
+						<a class="grybtn col-md-6 mg-bottom-10" ng-click="gotoLogin()" style="width:100%;display:block;border:1px solid #ccc;font-size: 14px;text-decoration: none;">
+							<span class="fa fa-sign-in fa-2 btn"></span>&nbsp;Go to Log In
+						</a>
+					</div>
+			    </div>
+			</div>
+			<!-- <div class="col-md-3 mg-top-20 mg-bottom-20"></div> -->
+			<!-- <div class="col-md-12 mg-top-20 mg-bottom-20"></div>	 -->
+			<div class="col-md-4 mg-top-20 mg-bottom-20"></div>
+		</div>
+	</div>
+
+</div>

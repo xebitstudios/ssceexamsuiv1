@@ -1,0 +1,57 @@
+<div ng-controller="PricingController">
+	<mock-header></mock-header>
+
+	<div growl></div>
+	<div class="bodyContainer f2f6f6">
+		<div class="bodyContent" id="ns_content">
+			<div class="col-md-12 tblgridbg margintopbottom30px">
+				<div class="col-md-12">
+					<h1 class="mg-top-20 mg-bottom-10" style="font-size:xx-large;text-align:center;"><em>Pricing Guide</em></h1>
+					<div>
+						<div class="mg-bottom-10 subheadertabs">
+							<div href="#" class="btn btn-block btn-default setmiddle" style="width:250px;font-size:medium;font-weight:400;background-color: #ddd;color: #000;border-bottom: 4px solid #76C187;">Available Subscription Models</div>
+						</div>
+					</div>
+				</div>
+				<div class="margintopbottom30px">
+			      <div id="examSubjListView" class="paddingtop20">
+					<div class="pricingpage" id="examsubj">
+			      		<ul class="flist col-md-12" style="justify-content:center;">
+			      			<li class="w250 col-md-4" ng-repeat="subj in examsubjects" style="box-shadow: 0 3px 10px rgba(0,0,0,.2);">
+					  		  <div class="plan_card cursor_pointer">									
+								<h3 class="plan_type">{{subj.name}}</h3>								
+								<span class="plan_price" data-qa="free_plan_price"><span class="currency"></span>{{subj.price}} / mth</span>
+								<span class="plan_price_details">{{subj.notes}}</span>
+							</div>
+							<button class="btn detail_button create_free" ng-click="toggleModal(subj.href)" >{{subj.btnval}}</button>
+					  		</li>
+			      		</ul>
+					</div>
+				  </div>
+			    </div>
+		    </div>
+		</div>
+	</div>
+	
+	<mock-footer></mock-footer>
+	<modal-dialog show='themodal.modalShown' dialog-title="" class="modal-size-1 fade-in-out" on-close='logClose()'>
+		<div class="col-md-12 col-sm-12 mg-bottom-10 pd-left-10 pd-right-10">
+			<h3 style="text-align:center!important;color:#555459;font-weight:600;" class="mg-bottom-10">Click Confirm Upgrade Version to get Payment Instructions</h3>
+		</div>
+		<div class="{{dskipped.ishide}}" style="text-align:center;position:relative;width:100%;border-width:1px 0 0 0;">
+			<h4 style="text-align:center!important;"><em>{{mtxt.perks}}</em></h4>
+		</div>
+		<div class="mg-bottom-20 {{dskipped.ishide}}" style="text-align:center;position:relative;width:100%;border-width:1px 0 0 0;">
+			<h4 style="text-align:center!important;"><em>{{mtxt.note}}</em></h4>
+		</div>
+		<div class="mg-bottom-20" style="text-align: center; position:relative; width: 100%; border-width: 1px 0 0 0; ">
+		    <button style="font-weight:600;width:200px;background:#{{mtxt.clr}};color:#fff;" type="button" class="btn {{hidebtn2}}" ng-click="confirmUpgrade(mtxt.txt)">{{mtxt.txt}}</button>
+		</div>
+	</modal-dialog>
+
+	<script>
+		$(function () {
+		  $('[data-toggle="popover"]').popover()
+		})
+	</script>
+</div>
