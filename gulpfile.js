@@ -2,7 +2,6 @@
 // Date: Apr 6, 2016
 
 var gulp = require('gulp');
-// var jsdoc = require('gulp-jsdoc');
 var uglify = require('gulp-uglify');
 var concat = require('gulp-concat');
 var es = require('event-stream');
@@ -22,12 +21,6 @@ var templateCache = require('gulp-angular-templatecache');
 //   return del([
 //       'app/dist/**/*'
 //   ]);
-// });
-
-// run gulp js-doc from the command line to have the documentation generated
-// gulp.task('js-doc', function() {
-//   return gulp.src("./src/*.js")
-//     .pipe(jsdoc('./documentation-output'));
 // });
 
 gulp.task('templates', function () {

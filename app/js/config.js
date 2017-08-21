@@ -1,11 +1,13 @@
 module.exports = {
 	// static pages / api address
-	'dev': 'http://localhost:8065',
+	'dev': 'http://192.168.1.144:8066/api',
 	'qa': '',
 	'prod': '',
 	// secret is used when we create and verify JSON Web Tokens
-	'secret': 'this is the ssceexams ui app',
-	'LoggingAPI': '192.168.1.144:8066/api',
-	'ApiElasticIp': '34.225.120.20:8066',
-	'localdatabase': 'mongodb://localhost:27017/tablename'
+	'secret': 'this is the ssceexams API app',
+	// the URI with username and password to your MongoDB installation
+	// C:\Program Files\MongoDB\Server\3.2\bin
+	'ApiElasticIp': '192.54.65.20:8081/api',
+	'database': 'mongodb://34.205.165.119:27017/local'
+	// 'database': 'mongodb://localhost:27017/users'
 };
