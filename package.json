@@ -1,33 +1,12 @@
 {
-  "name": "SSCEexamsAPI",
-  "version": "0.0.1",
-  "description": "SSCE Examinations Express API.",
-  "directories": {
-    "test": "test"
-  },
-  "scripts": {
-    "test": "karma start karma.conf.js",
-    "start": "node scripts/web-server.js",
-    "serve": "gulp serve"
-  },
-  "author": "Adetunji Oduyela",
-  "license": "ISC",
-  "dependencies": {
-    "express": "^4.14.0",
-    "bcrypt-nodejs": "0.0.3",
-    "body-parser": "1.13.1",
-    "download": "^4.4.3",
-    "event-stream": "^3.3.4",
-    "gulp-htmlmin": "^3.0.0",
-    "gulp-minify": "0.0.7",
-    "jsonwebtoken": "^7.1.9",
-    "jquery": "^2.1.4",
-    "lodash": "^3.10.1",
-    "moment": "^2.14.1",
-    "morgan": "^1.7.0",
-    "parse-link-header": "^0.4.1",
-    "underscore": "^1.8.3",
-    "mongoose": "~4.8.1",
-    "cors": "^2.8.4"
-  }
+	"name": "schoollab-rest-api",
+	"version": "0.0.1",
+	"dependencies": {
+		"aws-sdk": "^2.312.0",
+		"uuid": "^3.3.2"
+	},
+	"scripts": {
+		"deploy-dev": "serverless deploy --stage dev --region us-east-1",
+		"deploy-staging": "serverless deploy --stage staging --region us-east-1"
+	}
 }
